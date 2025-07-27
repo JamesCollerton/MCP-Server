@@ -1,0 +1,16 @@
+@startuml
+' Authorization diagram skeleton
+
+actor User
+participant "MCP Client" as mcp_client
+participant "MCP Server" as mcp_server
+participant "MCP Server" as mcp_server
+
+User -> AuthService : Request access token
+AuthService -> User : Return access token
+User -> ResourceServer : Access resource with token
+ResourceServer -> AuthService : Validate token
+AuthService -> ResourceServer : Token valid/invalid
+ResourceServer -> User : Grant/deny access
+
+@enduml
