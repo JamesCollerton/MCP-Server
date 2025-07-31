@@ -14,36 +14,39 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import io.modelcontextprotocol.client.McpSyncClient;
 
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.tool.ToolCallbackProvider;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
+
 @SpringBootApplication
 public class McpclientApplication {
 
+
+	private static final String userInput = "What is the weather in Tokyo?";
+	
 	public static void main(String[] args) {
 		SpringApplication.run(McpclientApplication.class, args);
 	}
 
 	@Bean
-	public CommandLineRunner chatbot(ChatClient.Builder chatClientBuilder, List<McpSyncClient> mcpSyncClients) {
+	public CommandLineRunner predefinedQuestions(ChatClient.Builder chatClientBuilder, ToolCallbackProvider tools,
+			ConfigurableApplicationContext context) {
 
 		return args -> {
 
 			var chatClient = chatClientBuilder
-					.defaultSystem("You are useful assistant and can perform web searches Brave's search API to reply to your questions.")
-					.defaultToolCallbacks(new SyncMcpToolCallbackProvider(mcpSyncClients))
-					.defaultAdvisors(MessageChatMemoryAdvisor.builder(MessageWindowChatMemory.builder().build()).build())
+					.defaultToolCallbacks(tools)
 					.build();
 
-			// Start the chat loop
-			System.out.println("\nI am your AI assistant.\n");
-			try (Scanner scanner = new Scanner(System.in)) {
-				while (true) {
-					System.out.print("\nUSER: ");
-					System.out.println("\nASSISTANT: " +
-							chatClient.prompt(scanner.nextLine()) // Get the user input
-									.call()
-									.content());
-				}
-			}
+			System.out.println("\n>>> QUESTION: " + userInput);
+			System.out.println("\n>>> ASSISTANT: " + chatClient.prompt(userInput).call().content());
 
+			context.close();
 		};
 	}
 
