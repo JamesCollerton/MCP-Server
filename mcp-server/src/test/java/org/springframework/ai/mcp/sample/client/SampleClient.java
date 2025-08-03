@@ -50,12 +50,9 @@ public class SampleClient {
 			System.out.println("Tool: " + tool.name() + ", description: " + tool.description() + ", schema: " + tool.inputSchema());
 		});
 
-		CallToolResult weatherForcastResult = client.callTool(new CallToolRequest("getWeatherForecastByLocation",
-				Map.of("latitude", "47.6062", "longitude", "-122.3321")));
-		System.out.println("Weather Forcast: " + weatherForcastResult);
-
-		CallToolResult alertResult = client.callTool(new CallToolRequest("getAlerts", Map.of("state", "NY")));
-		System.out.println("Alert Response = " + alertResult);
+		CallToolResult mcpServerName = client.callTool(new CallToolRequest("getMcpServerName",
+				Map.of("name", "David")));
+		System.out.println(mcpServerName);
 
 		client.closeGracefully();
 

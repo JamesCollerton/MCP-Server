@@ -106,8 +106,8 @@ public class McpServerApplication {
     }
 
     @Bean
-    public ToolCallbackProvider weatherTools(WeatherService weatherService){
-      return MethodToolCallbackProvider.builder().toolObjects(weatherService).build();
+    public ToolCallbackProvider weatherTools(WeatherService mcpServerMetadataService){
+      return MethodToolCallbackProvider.builder().toolObjects(mcpServerMetadataService).build();
     }
 }
 ```
