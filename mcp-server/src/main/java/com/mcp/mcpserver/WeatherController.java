@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import reactor.core.publisher.Mono;
-
 @RestController
 @RequestMapping("/api/weather")
 public class WeatherController {
@@ -19,12 +17,12 @@ public class WeatherController {
     }
 
     @GetMapping("/forecast")
-    public Mono<String> getWeatherForecast(@RequestParam double latitude, @RequestParam double longitude) {
+    public String getWeatherForecast(@RequestParam double latitude, @RequestParam double longitude) {
         return weatherService.getWeatherForecastByLocation(latitude, longitude);
     }
 
     @GetMapping("/alerts/{state}")
-    public Mono<String> getAlerts(@PathVariable String state) {
+    public String getAlerts(@PathVariable String state) {
         return weatherService.getAlerts(state);
     }
 } 
