@@ -15,17 +15,22 @@
 */
 package org.springframework.ai.mcp.sample.server.tools;
 
+import org.springaicommunity.mcp.annotation.McpTool;
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.stereotype.Service;
 
 @Service
-public class McpServerMetadataService {
+public class McpServerTools {
 
-	public McpServerMetadataService() {}
+	public McpServerTools() {}
 
-	@Tool(description = "Get the name of the MCP server")
+//	@Tool(description = "Get the name of the MCP server")
+//	public String getMcpServerName(String name) {
+//		return String.format("Hello %s, the MCP Server's name is mcp-server!", name);
+//	}
+
+	@McpTool(description = "Get the name of the MCP server")
 	public String getMcpServerName(String name) {
 		return String.format("Hello %s, the MCP Server's name is mcp-server!", name);
 	}
-
 }

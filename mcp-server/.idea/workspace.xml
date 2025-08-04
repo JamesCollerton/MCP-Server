@@ -5,18 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6927663d-60b7-4b4e-8898-52248e21fed5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/tools/McpServerMetadataService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/prompts/McpServerPrompts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/resources/McpServerResources.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/McpServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/McpServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/WeatherService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/springframework/ai/mcp/sample/client/SampleClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/springframework/ai/mcp/sample/client/SampleClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/tools/McpServerMetadataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/tools/McpServerTools.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -43,16 +51,22 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.ClientSse.executor": "Debug",
+    "Application.ClientSse.executor": "Run",
     "Application.ClientStdio.executor": "Debug",
     "Application.McpServerApplication.executor": "Debug",
     "Application.WeatherService.executor": "Run",
+    "Maven.mcp-weather-starter-webmvc-server [clean...].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/JamesCollerton/Documents/Programming/Git_Folders/MCP-Server/mcp-server/pom.xml"
   }
 }]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
   <component name="RunManager" selected="Application.ClientSse">
     <configuration name="ClientSse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.springframework.ai.mcp.sample.client.ClientSse" />

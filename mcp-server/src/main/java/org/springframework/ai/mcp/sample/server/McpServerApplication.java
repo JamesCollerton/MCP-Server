@@ -1,13 +1,15 @@
 package org.springframework.ai.mcp.sample.server;
 
-import org.springframework.ai.mcp.sample.server.tools.McpServerMetadataService;
-import org.springframework.ai.tool.ToolCallback;
+import io.modelcontextprotocol.server.McpServerFeatures;
+import org.springaicommunity.mcp.spring.SyncMcpAnnotationProvider;
+import org.springframework.ai.mcp.sample.server.tools.McpServerTools;
 import org.springframework.ai.tool.ToolCallbackProvider;
-import org.springframework.ai.tool.function.FunctionToolCallback;
 import org.springframework.ai.tool.method.MethodToolCallbackProvider;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import java.util.List;
 
 @SpringBootApplication
 public class McpServerApplication {
@@ -16,9 +18,13 @@ public class McpServerApplication {
 		SpringApplication.run(McpServerApplication.class, args);
 	}
 
-	@Bean
-	public ToolCallbackProvider weatherTools(McpServerMetadataService mcpServerMetadataService) {
-		return MethodToolCallbackProvider.builder().toolObjects(mcpServerMetadataService).build();
-	}
+//	@Bean
+//	public ToolCallbackProvider mcpServerTools(McpServerTools mcpServerTools) {
+//		return MethodToolCallbackProvider.builder().toolObjects(mcpServerTools).build();
+//	}
 
+	@Bean
+	public List<McpServerFeatures.SyncToolSpecification> toolSpecs(McpServerTools toolProvider) {
+		return SyncMcpAnnotationProvider.createSyncToolSpecifications(List.of(toolProvider));
+	}
 }
