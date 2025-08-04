@@ -19,6 +19,7 @@ import java.util.Map;
 
 import io.modelcontextprotocol.client.McpClient;
 import io.modelcontextprotocol.spec.McpClientTransport;
+import io.modelcontextprotocol.spec.McpSchema;
 import io.modelcontextprotocol.spec.McpSchema.CallToolRequest;
 import io.modelcontextprotocol.spec.McpSchema.CallToolResult;
 import io.modelcontextprotocol.spec.McpSchema.ListToolsResult;
@@ -53,6 +54,10 @@ public class SampleClient {
 		CallToolResult mcpServerName = client.callTool(new CallToolRequest("getMcpServerName",
 				Map.of("name", "David")));
 		System.out.println(mcpServerName);
+
+		McpSchema.ReadResourceResult resource = client.readResource(new McpSchema.ReadResourceRequest("mcp-server://david"));
+
+		System.out.println("Resource = " + resource);
 
 		client.closeGracefully();
 

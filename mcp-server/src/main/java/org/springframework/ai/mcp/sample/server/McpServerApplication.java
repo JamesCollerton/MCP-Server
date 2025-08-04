@@ -2,6 +2,8 @@ package org.springframework.ai.mcp.sample.server;
 
 import io.modelcontextprotocol.server.McpServerFeatures;
 import org.springaicommunity.mcp.spring.SyncMcpAnnotationProvider;
+import org.springframework.ai.mcp.sample.server.prompts.McpServerPrompts;
+import org.springframework.ai.mcp.sample.server.resources.McpServerResources;
 import org.springframework.ai.mcp.sample.server.tools.McpServerTools;
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.tool.method.MethodToolCallbackProvider;
@@ -18,13 +20,19 @@ public class McpServerApplication {
 		SpringApplication.run(McpServerApplication.class, args);
 	}
 
-//	@Bean
-//	public ToolCallbackProvider mcpServerTools(McpServerTools mcpServerTools) {
-//		return MethodToolCallbackProvider.builder().toolObjects(mcpServerTools).build();
-//	}
+	@Bean
+	public List<McpServerFeatures.SyncToolSpecification> toolSpecs(McpServerTools mcpServerTools) {
+		return SyncMcpAnnotationProvider.createSyncToolSpecifications(List.of(mcpServerTools));
+	}
 
 	@Bean
-	public List<McpServerFeatures.SyncToolSpecification> toolSpecs(McpServerTools toolProvider) {
-		return SyncMcpAnnotationProvider.createSyncToolSpecifications(List.of(toolProvider));
+	public List<McpServerFeatures.SyncResourceSpecification> resourceSpecs(McpServerResources mcpServerResources) {
+		return SyncMcpAnnotationProvider.createSyncResourceSpecifications(List.of(mcpServerResources));
 	}
+
+	@Bean
+	public List<McpServerFeatures.SyncPromptSpecification> promptSpecs(McpServerPrompts mcpServerPrompts) {
+		return SyncMcpAnnotationProvider.createSyncPromptSpecifications(List.of(mcpServerPrompts));
+	}
+
 }
