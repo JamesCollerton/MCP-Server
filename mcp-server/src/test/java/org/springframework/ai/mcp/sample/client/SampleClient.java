@@ -56,8 +56,12 @@ public class SampleClient {
 		System.out.println(mcpServerName);
 
 		McpSchema.ReadResourceResult resource = client.readResource(new McpSchema.ReadResourceRequest("mcp-server://david"));
-
 		System.out.println("Resource = " + resource);
+
+		// Prompts
+		McpSchema.GetPromptResult prompt = client.getPrompt(
+				new McpSchema.GetPromptRequest("greeting", Map.of("name", "David")));
+		System.out.println("Prompt = " + prompt);
 
 		client.closeGracefully();
 

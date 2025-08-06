@@ -7,8 +7,7 @@
     <list default="true" id="6927663d-60b7-4b4e-8898-52248e21fed5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/McpServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/McpServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/resources/McpServerResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/resources/McpServerResources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/prompts/McpServerPrompts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/ai/mcp/sample/server/prompts/McpServerPrompts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/springframework/ai/mcp/sample/client/SampleClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/springframework/ai/mcp/sample/client/SampleClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +47,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.ClientSse.executor": "Debug",
+    "Application.ClientSse.executor": "Run",
     "Application.ClientStdio.executor": "Debug",
     "Application.McpServerApplication.executor": "Debug",
     "Application.WeatherService.executor": "Run",
