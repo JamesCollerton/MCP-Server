@@ -78,3 +78,4 @@ User: "Create a report based on my last 5 meetings."
 
 - [Spring WebMVC example project](https://github.com/spring-projects/spring-ai-examples/blob/main/model-context-protocol/weather/starter-webmvc-server/README.md)
 - [Chat Client](https://docs.spring.io/spring-ai/reference/api/chatclient.html)
+- [How to use prompts/ resources](https://github.com/spring-projects/spring-ai-examples/blob/5e31bbad50248f2764f9ce175fd749f7c9b60b6e/model-context-protocol/mcp-annotations-server/src/main/java/org/springframework/ai/mcp/sample/server/McpServerApplication.java)
